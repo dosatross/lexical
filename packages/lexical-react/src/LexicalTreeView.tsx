@@ -145,7 +145,8 @@ export function TreeView({
     <div className={viewClassName}>
       {!timeTravelEnabled && totalEditorStates > 2 && (
         <button
-          onClick={() => {
+          onClick={(event) => {
+            event.preventDefault();
             const rootElement = editor.getRootElement();
 
             if (rootElement !== null) {
@@ -163,7 +164,8 @@ export function TreeView({
         <div className={timeTravelPanelClassName}>
           <button
             className={timeTravelPanelButtonClassName}
-            onClick={() => {
+            onClick={(event) => {
+              event.preventDefault();
               setIsPlaying(!isPlaying);
             }}>
             {isPlaying ? 'Pause' : 'Play'}
@@ -187,7 +189,8 @@ export function TreeView({
           />
           <button
             className={timeTravelPanelButtonClassName}
-            onClick={() => {
+            onClick={(event) => {
+              event.preventDefault();
               const rootElement = editor.getRootElement();
 
               if (rootElement !== null) {
